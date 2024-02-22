@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 
 const Header = () => {
   const headerRef = useRef(null);
+  const menuRef = useRef(null);
 
   const stickyHeaderFunc = () => {
     window.addEventListener("scroll", () => {
@@ -32,6 +33,8 @@ const Header = () => {
     });
   };
 
+  const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
+
   return (
     <header ref={headerRef} className="w-full h-[80px] flex items-center">
       <div className="container">
@@ -53,7 +56,7 @@ const Header = () => {
           </div>
           {/* Logo End */}
           {/* Menu Start */}
-          <div className="menu">
+          <div className="menu" ref={menuRef} onClick={toggleMenu}>
             <ul className="flex items-center gap-10">
               <li>
                 <a
@@ -99,7 +102,10 @@ const Header = () => {
             <button className="flex items-center gap-2 text-smallTextColor font-[600] border border-solid border-smallTextColor py-2 px-4 rounded-[8px] max-h-[40px] hover:bg-smallTextColor hover:text-white hover:font-[500] ease-in duration-200">
               <i className="ri-send-plane-line"></i>Let's Talk
             </button>
-            <span className="text-2xl text-smallTextColor md:hidden cursor-pointer">
+            <span
+              onClick={toggleMenu}
+              className="text-2xl text-smallTextColor md:hidden cursor-pointer"
+            >
               <i className="ri-menu-line"></i>
             </span>
           </div>
