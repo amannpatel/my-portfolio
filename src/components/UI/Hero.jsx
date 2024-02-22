@@ -32,7 +32,7 @@ const Hero = () => {
             >
               <a href="mailto:aman17626@gmail.com">
                 <button className="bg-primaryColor text-white font-[500] flex items-center gap-2 hover:bg-smallTextColor ease-in duration-300 py-2 px-4 rounded-[8px]">
-                  <i class="ri-mail-line"></i> Hire me
+                  <i className="ri-mail-line"></i> Hire me
                 </button>
               </a>
               <a
@@ -48,7 +48,7 @@ const Hero = () => {
               className="flex gap-2 text-headingColor mt-12 font-[500] text-[15px] leading-7 sm:pl-14 sm:pr-10"
             >
               <span>
-                <i class="ri-apps-2-line"></i>
+                <i className="ri-apps-2-line"></i>
               </span>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Incidunt, provident aut iusto accusamus assumenda voluptatem alias
@@ -65,7 +65,7 @@ const Hero = () => {
                   href="https://www.linkedin.com/in/amanpatell/"
                   className="text-smallTextColor text-[18px] font-[600]"
                 >
-                  <i class="ri-linkedin-box-fill"></i>
+                  <i className="ri-linkedin-box-fill"></i>
                 </a>
               </span>
               <span>
@@ -75,7 +75,7 @@ const Hero = () => {
                   href="https://github.com/amannpatel"
                   className="text-smallTextColor text-[18px] font-[600]"
                 >
-                  <i class="ri-github-fill"></i>
+                  <i className="ri-github-fill"></i>
                 </a>
               </span>
               <span>
@@ -85,7 +85,7 @@ const Hero = () => {
                   href="https://leetcode.com/amannpatell/"
                   className="text-smallTextColor text-[18px] font-[600]"
                 >
-                  <i class="ri-terminal-line"></i>
+                  <i className="ri-terminal-line"></i>
                 </a>
               </span>
               <span>
@@ -95,7 +95,7 @@ const Hero = () => {
                   href="https://www.instagram.com/amann.kabir/"
                   className="text-smallTextColor text-[18px] font-[600]"
                 >
-                  <i class="ri-instagram-line"></i>
+                  <i className="ri-instagram-line"></i>
                 </a>
               </span>
             </div>

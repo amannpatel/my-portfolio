@@ -13,7 +13,7 @@ const Contact = () => {
               title="google-maps"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93532.27540988!2d91.6440868334056!3d26.139008704163583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5a287f9133ff%3A0x2bbd1332436bde32!2sGuwahati%2C%20Assam!5e0!3m2!1sen!2sin!4v1708614639475!5m2!1sen!2sin"
               className="border-0 w-full h-full"
-              allowFullscreen=""
+              allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>

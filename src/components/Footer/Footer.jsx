@@ -13,7 +13,7 @@ const Footer = () => {
             </h2>
             <a href="mailto:aman17626@gmail.com">
               <button className="bg-primaryColor text-white font-[500] flex items-center gap-2 hover:bg-smallTextColor ease-in duration-300 py-2 px-4 rounded-[8px]">
-                <i class="ri-mail-line"></i> Hire me
+                <i className="ri-mail-line"></i> Hire me
               </button>
             </a>
           </div>
@@ -34,7 +34,7 @@ const Footer = () => {
                   href="https://github.com/amannpatel"
                   className="text-gray-300 font-[500] text-[18px] "
                 >
-                  <i class="ri-github-fill"></i>
+                  <i className="ri-github-fill"></i>
                 </a>
               </span>
 
@@ -43,7 +43,7 @@ const Footer = () => {
                   href="https://www.linkedin.com/in/amanpatell/"
                   className="text-gray-300 font-[500] text-[18px] "
                 >
-                  <i class="ri-linkedin-box-fill"></i>
+                  <i className="ri-linkedin-box-fill"></i>
                 </a>
               </span>
 
@@ -52,7 +52,7 @@ const Footer = () => {
                   href="https://www.instagram.com/amann.kabir/"
                   className="text-gray-300 font-[500] text-[18px] "
                 >
-                  <i class="ri-instagram-line"></i>
+                  <i className="ri-instagram-line"></i>
                 </a>
               </span>
 
@@ -61,7 +61,7 @@ const Footer = () => {
                   href="https://leetcode.com/amannpatell/"
                   className="text-gray-300 font-[500] text-[18px] "
                 >
-                  <i class="ri-terminal-line"></i>
+                  <i className="ri-terminal-line"></i>
                 </a>
               </span>
             </div>
