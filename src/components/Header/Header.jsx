@@ -8,7 +8,10 @@ const Header = () => {
           {/* {Logo} */}
           <div className="flex items-center gap-[10px]">
             <span className="w-[35px] h-[35px] bg-primaryColor text-white text-[18px] font-[500] rounded-full flex items-center justify-center">
-              A
+              <img
+                src="https://avatars.githubusercontent.com/u/59427087?v=4"
+                alt="aman"
+              />
             </span>
             <div className="leading-[20px]">
               <h2 className="text-xl text-smallTextColor font-[700]">Aman</h2>
