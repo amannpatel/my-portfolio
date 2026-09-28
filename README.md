@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# Aman Patel — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A premium, art-directed personal portfolio site for **Aman Patel** — software engineer specializing in resilient backend systems and distributed platforms. Built with a modern React stack and a design system inspired by Apple, Linear, and Vercel.
 
-## Available Scripts
+## ✨ Highlights
 
-In the project directory, you can run:
+- **Dark-first premium aesthetic** with a curated violet → cyan → rose accent palette, layered glass surfaces, and animated aurora backgrounds
+- **Space Grotesk + Inter** typography for a strong editorial voice
+- **Framer Motion** driven micro-interactions: masked heading reveals, staggered word entrances, magnetic buttons, mouse-following spotlight, spotlight cards, and floating parallax blobs
+- **Bento layouts** for skills and highlights with mixed card sizes
+- **Sticky glass navigation** that transforms as you scroll, with active-section indicator
+- **Timeline experience section** with subtle scroll animations
+- **Editorial project cards** with animated gradient stages and per-project accent tokens
+- **Marquee tech ticker** for scannable skill overview
+- **Prefers-reduced-motion** support throughout
+- Fully responsive from mobile → ultra-wide desktop, keyboard accessible, semantic HTML
 
-### `npm start`
+## 🧱 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Vite](https://vitejs.dev/) + [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS 3](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [lucide-react](https://lucide.dev/) icons
+- Google Fonts: Space Grotesk, Inter, JetBrains Mono
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Getting Started
 
-### `npm test`
+```bash
+# 1. install dependencies
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 2. run the dev server (http://localhost:5173)
+npm run dev
 
-### `npm run build`
+# 3. type-check + production build
+npm run build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 4. preview the production build locally
+npm run preview
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Requires Node.js 18+ (Node 20 or 22 recommended).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Project Structure
 
-### `npm run eject`
+```
+my-portfolio/
+├── public/
+│   ├── favicon.svg
+│   └── resume/               # drop your résumé PDF here as Aman-Patel-Resume.pdf
+├── src/
+│   ├── components/
+│   │   ├── effects/          # Aurora background, mouse spotlight
+│   │   ├── layout/           # Navbar, Footer
+│   │   └── ui/               # Reveal, AnimatedHeading, SpotlightCard, MagneticButton
+│   ├── data/
+│   │   └── portfolio.ts      # ← single source of truth for résumé-driven content
+│   ├── hooks/                # useTheme, useScrollProgress
+│   ├── sections/             # Hero, About, Skills, Experience, Projects, Highlights, Contact
+│   ├── styles/
+│   │   └── globals.css       # Tailwind layers + design tokens
+│   ├── utils/                # cn helper
+│   ├── App.tsx
+│   └── main.tsx
+├── index.html
+├── tailwind.config.js
+├── postcss.config.js
+├── tsconfig.json
+├── vite.config.ts
+└── package.json
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ✏️ Updating Content
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+All résumé-derived content (name, role, positioning statement, skills, experience, projects, education, highlights, and contact info) lives in a **single file**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `src/data/portfolio.ts`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Edit that file to keep the site in sync with your latest résumé — the components read from it directly.
 
-## Learn More
+## 📄 Résumé Download
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The hero includes a **Download résumé** button that points to `/resume/Aman-Patel-Resume.pdf`. Drop the file into `public/resume/` and it will be served automatically.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🌗 Theming
 
-### Code Splitting
+- Ships **dark-first** with a smooth animated theme toggle in the navbar
+- Design tokens are defined as CSS custom properties in [globals.css](src/styles/globals.css)
+- Tailwind palette lives in [tailwind.config.js](tailwind.config.js)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ♿ Accessibility & Performance
 
-### Analyzing the Bundle Size
+- Semantic landmarks (`<header>`, `<main>`, `<footer>`, `<nav>`, `<section>`), skip-friendly headings
+- Visible focus rings, ARIA labels on icon-only controls
+- `prefers-reduced-motion` disables non-essential animations
+- Transform/opacity-based animations, throttled scroll listeners via `requestAnimationFrame`
+- Google Fonts preconnected + `display=swap`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📜 License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Personal portfolio — © Aman Patel. Feel free to use the code as inspiration for your own site; please do not reuse the personal content.
