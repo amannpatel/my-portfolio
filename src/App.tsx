@@ -17,9 +17,9 @@ export default function App() {
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
       >
-        <div className="absolute inset-x-0 top-[60vh] mx-auto h-[500px] max-w-6xl bg-[radial-gradient(ellipse_at_center,rgba(124,92,255,0.10),transparent_70%)] blur-2xl" />
-        <div className="absolute inset-x-0 top-[140vh] mx-auto h-[500px] max-w-6xl bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.09),transparent_70%)] blur-2xl" />
-        <div className="absolute inset-x-0 top-[220vh] mx-auto h-[500px] max-w-6xl bg-[radial-gradient(ellipse_at_center,rgba(244,114,182,0.08),transparent_70%)] blur-2xl" />
+        <div className="absolute inset-x-0 top-[60vh] mx-auto h-[500px] max-w-6xl bg-[radial-gradient(ellipse_at_center,rgba(124,92,255,0.07),transparent_70%)] blur-2xl dark:bg-[radial-gradient(ellipse_at_center,rgba(124,92,255,0.10),transparent_70%)]" />
+        <div className="absolute inset-x-0 top-[140vh] mx-auto h-[500px] max-w-6xl bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.06),transparent_70%)] blur-2xl dark:bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.09),transparent_70%)]" />
+        <div className="absolute inset-x-0 top-[220vh] mx-auto h-[500px] max-w-6xl bg-[radial-gradient(ellipse_at_center,rgba(244,114,182,0.06),transparent_70%)] blur-2xl dark:bg-[radial-gradient(ellipse_at_center,rgba(244,114,182,0.08),transparent_70%)]" />
       </div>
 
       <MouseSpotlight />

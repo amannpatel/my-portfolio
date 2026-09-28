@@ -16,13 +16,13 @@ export function Experience() {
               </span>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="heading-lg mt-5 text-white/95">
+              <h2 className="heading-lg mt-5 text-ink-950 dark:text-white/95">
                 Building in production, shipping with intent.
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.15}>
-            <p className="max-w-md text-white/60">
+            <p className="max-w-md text-ink-600 dark:text-white/60">
               A snapshot of the work — the systems, teams, and problems I’ve been
               closest to.
             </p>
@@ -33,7 +33,7 @@ export function Experience() {
           {/* Timeline spine */}
           <div
             aria-hidden
-            className="absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-transparent via-white/20 to-transparent md:block"
+            className="absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-transparent via-ink-900/20 to-transparent dark:via-white/20 md:block"
           />
 
           <div className="space-y-10">
@@ -52,16 +52,20 @@ export function Experience() {
                   <SpotlightCard className="p-6 md:p-8">
                     <div className="flex flex-wrap items-start justify-between gap-4">
                       <div>
-                        <p className="text-sm text-white/50">{exp.duration}</p>
-                        <h3 className="mt-2 font-display text-2xl font-semibold text-white/95 md:text-3xl">
+                        <p className="text-sm text-ink-500 dark:text-white/50">
+                          {exp.duration}
+                        </p>
+                        <h3 className="mt-2 font-display text-2xl font-semibold text-ink-950 dark:text-white/95 md:text-3xl">
                           {exp.role}
                         </h3>
-                        <p className="mt-1 text-white/70">
-                          <span className="text-white/90">{exp.company}</span> ·{' '}
-                          {exp.location}
+                        <p className="mt-1 text-ink-600 dark:text-white/70">
+                          <span className="text-ink-900 dark:text-white/90">
+                            {exp.company}
+                          </span>{' '}
+                          · {exp.location}
                         </p>
                         {exp.client && (
-                          <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/40">
+                          <p className="mt-1 text-xs uppercase tracking-[0.18em] text-ink-400 dark:text-white/40">
                             Client · {exp.client}
                           </p>
                         )}
@@ -70,7 +74,7 @@ export function Experience() {
                         {exp.tech.slice(0, 6).map((t) => (
                           <span
                             key={t}
-                            className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70"
+                            className="rounded-full border border-ink-900/10 bg-ink-900/[0.03] px-3 py-1 text-xs text-ink-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70"
                           >
                             {t}
                           </span>
@@ -78,13 +82,13 @@ export function Experience() {
                       </div>
                     </div>
 
-                    <p className="mt-5 text-white/70">{exp.summary}</p>
+                    <p className="mt-5 text-ink-600 dark:text-white/70">{exp.summary}</p>
 
                     <ul className="mt-6 grid gap-3 md:grid-cols-2">
                       {exp.responsibilities.map((r) => (
                         <li
                           key={r.slice(0, 24)}
-                          className="flex gap-3 text-sm text-white/65"
+                          className="flex gap-3 text-sm text-ink-600 dark:text-white/65"
                         >
                           <span
                             aria-hidden
@@ -99,7 +103,7 @@ export function Experience() {
                       {exp.tech.map((t) => (
                         <span
                           key={t}
-                          className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70"
+                          className="rounded-full border border-ink-900/10 bg-ink-900/[0.03] px-3 py-1 text-xs text-ink-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70"
                         >
                           {t}
                         </span>
@@ -124,15 +128,17 @@ export function Experience() {
                 <SpotlightCard className="p-6 md:p-8">
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div>
-                      <p className="text-sm text-white/50">{education.duration}</p>
-                      <h3 className="mt-2 font-display text-2xl font-semibold text-white/95 md:text-3xl">
+                      <p className="text-sm text-ink-500 dark:text-white/50">
+                        {education.duration}
+                      </p>
+                      <h3 className="mt-2 font-display text-2xl font-semibold text-ink-950 dark:text-white/95 md:text-3xl">
                         {education.degree}
                       </h3>
-                      <p className="mt-1 text-white/70">
+                      <p className="mt-1 text-ink-600 dark:text-white/70">
                         {education.institution} · {education.score}
                       </p>
                     </div>
-                    <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50">
+                    <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-white/50">
                       <GraduationCap size={14} /> Education
                     </div>
                   </div>
@@ -140,7 +146,7 @@ export function Experience() {
                     {education.coursework.map((c) => (
                       <span
                         key={c}
-                        className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70"
+                        className="rounded-full border border-ink-900/10 bg-ink-900/[0.03] px-3 py-1 text-xs text-ink-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70"
                       >
                         {c}
                       </span>

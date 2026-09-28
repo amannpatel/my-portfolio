@@ -38,9 +38,9 @@ const variants: Record<Variant, string> = {
   primary:
     'text-white shadow-glow bg-[linear-gradient(120deg,#7c5cff,#5c78ff_45%,#22d3ee)] hover:shadow-glow-cyan',
   secondary:
-    'text-white/90 glass hover:text-white',
+    'text-ink-900 glass hover:text-ink-950 dark:text-white/90 dark:hover:text-white',
   ghost:
-    'text-white/70 hover:text-white bg-white/[0.02] border border-white/10 hover:border-white/20',
+    'text-ink-700 hover:text-ink-950 bg-ink-900/[0.03] border border-ink-900/10 hover:border-ink-900/20 dark:text-white/70 dark:hover:text-white dark:bg-white/[0.02] dark:border-white/10 dark:hover:border-white/20',
 };
 
 export const MagneticButton = forwardRef<HTMLAnchorElement, Props>(function MagneticButton(

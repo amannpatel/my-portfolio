@@ -27,7 +27,7 @@ export function Skills() {
     <section id="skills" className="relative py-28 md:py-36">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-24 mx-auto h-64 max-w-4xl bg-[radial-gradient(ellipse_at_center,rgba(124,92,255,0.15),transparent_70%)]"
+        className="pointer-events-none absolute inset-x-0 top-24 mx-auto h-64 max-w-4xl bg-[radial-gradient(ellipse_at_center,rgba(124,92,255,0.12),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(124,92,255,0.15),transparent_70%)]"
       />
       <div className="container relative">
         <div className="mb-14 flex flex-col items-start justify-between gap-6 md:mb-16 md:flex-row md:items-end">
@@ -39,13 +39,13 @@ export function Skills() {
               </span>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="heading-lg mt-5 text-white/95">
+              <h2 className="heading-lg mt-5 text-ink-950 dark:text-white/95">
                 A stack tuned for backend depth.
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.15}>
-            <p className="max-w-md text-white/60">
+            <p className="max-w-md text-ink-600 dark:text-white/60">
               Curated tools I reach for daily, grouped by where they show up in the
               stack — from language runtimes to data, delivery, and engineering craft.
             </p>
@@ -62,19 +62,19 @@ export function Skills() {
                 <SpotlightCard className="flex w-full flex-col p-6 md:p-7">
                   <div
                     className={cn(
-                      'relative mb-6 grid h-11 w-11 place-items-center rounded-2xl border border-white/10',
+                      'relative mb-6 grid h-11 w-11 place-items-center rounded-2xl border border-ink-900/10 dark:border-white/10',
                       'bg-gradient-to-br',
                       group.accent
                     )}
                   >
-                    <Icon className="h-5 w-5 text-white" />
+                    <Icon className="h-5 w-5 text-ink-900 dark:text-white" />
                     <span
                       aria-hidden
-                      className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_55%)]"
+                      className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.55),transparent_55%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_55%)]"
                     />
                   </div>
 
-                  <p className="font-display text-lg font-semibold text-white/95">
+                  <p className="font-display text-lg font-semibold text-ink-950 dark:text-white/95">
                     {group.title}
                   </p>
 
@@ -82,7 +82,7 @@ export function Skills() {
                     {group.items.map((item) => (
                       <span
                         key={item}
-                        className="rounded-full border border-white/[0.08] bg-white/[0.02] px-3 py-1 text-xs text-white/75 transition hover:border-white/20 hover:bg-white/[0.06]"
+                        className="rounded-full border border-ink-900/10 bg-ink-900/[0.03] px-3 py-1 text-xs text-ink-700 transition hover:border-ink-900/20 hover:bg-ink-900/[0.06] dark:border-white/[0.08] dark:bg-white/[0.02] dark:text-white/75 dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
                       >
                         {item}
                       </span>
@@ -105,14 +105,14 @@ export function Skills() {
           }}
         >
           <motion.ul
-            className="flex items-center gap-10 whitespace-nowrap font-display text-xl text-white/50 md:text-2xl"
+            className="flex items-center gap-10 whitespace-nowrap font-display text-xl text-ink-500 dark:text-white/50 md:text-2xl"
             animate={{ x: ['0%', '-50%'] }}
             transition={{ duration: 40, ease: 'linear', repeat: Infinity }}
           >
             {[...marqueeItems, ...marqueeItems].map((item, idx) => (
               <li key={`${item}-${idx}`} className="flex items-center gap-10">
                 <span>{item}</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-white/25" />
+                <span className="h-1.5 w-1.5 rounded-full bg-ink-400 dark:bg-white/25" />
               </li>
             ))}
           </motion.ul>
@@ -122,7 +122,6 @@ export function Skills() {
   );
 }
 
-// Bento layout mapping — mixes wider and narrower cards for varied rhythm.
 const layoutMap = [
   'md:col-span-3',
   'md:col-span-3',

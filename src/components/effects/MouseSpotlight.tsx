@@ -2,14 +2,14 @@ import { motion, useMotionTemplate, useMotionValue, useReducedMotion } from 'fra
 import { useEffect } from 'react';
 
 /**
- * A soft mouse-following spotlight rendered as a fixed overlay.
- * Sits above content but is fully click-through.
+ * Fixed, click-through mouse-following spotlight.
+ * Alpha values look subtle in both themes.
  */
 export function MouseSpotlight() {
   const reduce = useReducedMotion();
   const x = useMotionValue(-300);
   const y = useMotionValue(-300);
-  const bg = useMotionTemplate`radial-gradient(360px 360px at ${x}px ${y}px, rgba(124,92,255,0.16), rgba(34,211,238,0.08) 40%, transparent 70%)`;
+  const bg = useMotionTemplate`radial-gradient(360px 360px at ${x}px ${y}px, rgba(124,92,255,0.14), rgba(34,211,238,0.08) 40%, transparent 70%)`;
 
   useEffect(() => {
     if (reduce) return;

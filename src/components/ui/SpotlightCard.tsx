@@ -70,7 +70,7 @@ export const SpotlightCard = forwardRef<HTMLDivElement, Props>(function Spotligh
       <div className="relative z-10 h-full">{children}</div>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-60"
+        className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-ink-900/30 to-transparent opacity-60 dark:via-white/40 dark:opacity-60"
       />
     </motion.div>
   );

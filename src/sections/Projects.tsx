@@ -6,8 +6,7 @@ import { projects, type Project } from '@/data/portfolio';
 import { cn } from '@/utils/cn';
 
 const accentBg: Record<Project['accent'], string> = {
-  violet:
-    'from-accent-violet/40 via-accent-indigo/25 to-transparent',
+  violet: 'from-accent-violet/40 via-accent-indigo/25 to-transparent',
   cyan: 'from-accent-cyan/40 via-accent-indigo/25 to-transparent',
   amber: 'from-accent-amber/40 via-accent-rose/25 to-transparent',
 };
@@ -31,13 +30,13 @@ export function Projects() {
               </span>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="heading-lg mt-5 text-white/95">
+              <h2 className="heading-lg mt-5 text-ink-950 dark:text-white/95">
                 Projects I care about.
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.15}>
-            <p className="max-w-md text-white/60">
+            <p className="max-w-md text-ink-600 dark:text-white/60">
               A few systems where I could stretch the fundamentals — distributed
               coordination, secure APIs, and services designed to stay honest under
               load.
@@ -65,7 +64,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       className={cn('overflow-hidden p-0', accentRing[project.accent])}
     >
       <div className="grid overflow-hidden md:grid-cols-12">
-        {/* Visual side */}
+        {/* Visual side — always sits on a coloured gradient, so text stays white in both themes */}
         <div
           className={cn(
             'relative h-56 min-h-full md:h-auto md:col-span-5',
@@ -80,7 +79,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           />
           <div className="absolute inset-0 bg-grid bg-grid-dark opacity-30 mask-radial-fade" />
 
-          {/* Animated blobs */}
           <motion.div
             aria-hidden
             animate={reduce ? undefined : { x: [0, 20, 0], y: [0, -12, 0] }}
@@ -94,11 +92,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             className="absolute right-0 bottom-0 h-52 w-52 rounded-full bg-white/10 blur-3xl"
           />
 
-          {/* Title watermark */}
           <div className="absolute inset-0 flex items-end p-6 md:p-8">
-            <p className="font-display text-4xl font-semibold leading-[0.9] tracking-tight text-white/95 md:text-5xl">
+            <p className="font-display text-4xl font-semibold leading-[0.9] tracking-tight text-white md:text-5xl">
               {project.title.split(' ').slice(0, 3).join(' ')}
-              <span className="block text-white/40">
+              <span className="block text-white/50">
                 {project.title.split(' ').slice(3).join(' ')}
               </span>
             </p>
@@ -118,20 +115,25 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           )}
         >
           <div>
-            <p className="text-xs uppercase tracking-[0.24em] text-white/40">
+            <p className="text-xs uppercase tracking-[0.24em] text-ink-500 dark:text-white/40">
               {project.tagline}
             </p>
-            <h3 className="mt-3 font-display text-2xl font-semibold text-white/95 md:text-3xl">
+            <h3 className="mt-3 font-display text-2xl font-semibold text-ink-950 dark:text-white/95 md:text-3xl">
               {project.title}
             </h3>
-            <p className="mt-4 text-white/65 leading-relaxed">{project.description}</p>
+            <p className="mt-4 leading-relaxed text-ink-600 dark:text-white/65">
+              {project.description}
+            </p>
 
             <ul className="mt-6 grid gap-3 md:grid-cols-2">
               {project.contributions.map((c) => (
-                <li key={c.slice(0, 20)} className="flex gap-3 text-sm text-white/65">
+                <li
+                  key={c.slice(0, 20)}
+                  className="flex gap-3 text-sm text-ink-600 dark:text-white/65"
+                >
                   <span
                     aria-hidden
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/60"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ink-500 dark:bg-white/60"
                   />
                   <span>{c}</span>
                 </li>
@@ -144,7 +146,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70"
+                  className="rounded-full border border-ink-900/10 bg-ink-900/[0.03] px-3 py-1 text-xs text-ink-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70"
                 >
                   {t}
                 </span>
@@ -159,7 +161,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/80 transition hover:border-white/20 hover:bg-white/[0.08]"
+                    className="inline-flex items-center gap-2 rounded-full border border-ink-900/10 bg-ink-900/[0.03] px-4 py-2 text-sm text-ink-700 transition hover:border-ink-900/20 hover:bg-ink-900/[0.06] hover:text-ink-950 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/80 dark:hover:border-white/20 dark:hover:bg-white/[0.08] dark:hover:text-white"
                   >
                     {link.label.toLowerCase().includes('github') ? (
                       <Github size={14} />

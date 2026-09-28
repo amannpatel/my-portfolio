@@ -16,11 +16,13 @@ export function About() {
               </span>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="heading-lg mt-5 text-white/95">{about.title}</h2>
+              <h2 className="heading-lg mt-5 text-ink-950 dark:text-white/95">
+                {about.title}
+              </h2>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="mt-8 space-y-6 text-white/60 leading-relaxed">
+              <div className="mt-8 space-y-6 leading-relaxed text-ink-600 dark:text-white/60">
                 {about.paragraphs.map((p) => (
                   <p key={p.slice(0, 24)}>{p}</p>
                 ))}
@@ -32,7 +34,7 @@ export function About() {
                 {about.focus.map((f) => (
                   <span
                     key={f}
-                    className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70"
+                    className="rounded-full border border-ink-900/10 bg-ink-900/[0.03] px-3 py-1 text-xs text-ink-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70"
                   >
                     {f}
                   </span>
@@ -49,10 +51,12 @@ export function About() {
                     key={s.label}
                     className="min-h-[140px] p-6 md:min-h-[170px]"
                   >
-                    <p className="font-display text-4xl font-semibold text-white md:text-5xl">
+                    <p className="font-display text-4xl font-semibold text-ink-950 dark:text-white md:text-5xl">
                       {s.value}
                     </p>
-                    <p className="mt-3 text-sm text-white/55 md:text-base">{s.label}</p>
+                    <p className="mt-3 text-sm text-ink-600 dark:text-white/55 md:text-base">
+                      {s.label}
+                    </p>
                   </SpotlightCard>
                 ))}
               </div>
@@ -65,10 +69,10 @@ export function About() {
                     <Sparkles size={18} />
                   </span>
                   <div>
-                    <p className="font-display text-lg text-white/95">
+                    <p className="font-display text-lg text-ink-950 dark:text-white/95">
                       Philosophy
                     </p>
-                    <p className="mt-2 text-white/60">
+                    <p className="mt-2 text-ink-600 dark:text-white/60">
                       Boring backends are a compliment. I aim for systems that are
                       predictable in production, easy to reason about in review, and
                       calm at 3 AM — because the interesting problems live inside the

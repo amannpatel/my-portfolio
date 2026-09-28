@@ -18,15 +18,15 @@ export function Contact() {
         aria-hidden
         className="pointer-events-none absolute inset-0 overflow-hidden"
       >
-        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(124,92,255,0.25),transparent_60%)] blur-3xl" />
-        <div className="absolute inset-0 bg-grid bg-grid-dark opacity-30 mask-radial-fade" />
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(124,92,255,0.2),transparent_60%)] blur-3xl dark:bg-[radial-gradient(circle,rgba(124,92,255,0.25),transparent_60%)]" />
+        <div className="absolute inset-0 bg-grid bg-grid-light opacity-40 mask-radial-fade dark:bg-grid-dark dark:opacity-30" />
       </div>
 
       <div className="container relative">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
             <span className="eyebrow justify-center">
-              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
               {contact.eyebrow}
             </span>
           </Reveal>
@@ -36,7 +36,7 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-6 max-w-2xl text-white/60 md:text-lg">
+            <p className="mx-auto mt-6 max-w-2xl text-ink-600 dark:text-white/60 md:text-lg">
               {contact.subtitle}
             </p>
           </Reveal>
@@ -45,10 +45,10 @@ export function Contact() {
             <motion.a
               href={`mailto:${profile.email}`}
               whileHover={reduce ? undefined : { scale: 1.02 }}
-              className="mx-auto mt-10 inline-flex items-center gap-3 rounded-full bg-white px-6 py-4 font-display text-lg font-medium text-ink-950 shadow-glow transition-shadow hover:shadow-glow-cyan md:text-xl"
+              className="mx-auto mt-10 inline-flex items-center gap-3 rounded-full bg-ink-950 px-6 py-4 font-display text-lg font-medium text-white shadow-glow transition-shadow hover:shadow-glow-cyan dark:bg-white dark:text-ink-950 md:text-xl"
             >
               {profile.email}
-              <span className="grid h-8 w-8 place-items-center rounded-full bg-ink-950 text-white">
+              <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-ink-950 dark:bg-ink-950 dark:text-white">
                 <ArrowUpRight size={16} />
               </span>
             </motion.a>
@@ -65,21 +65,21 @@ export function Contact() {
                     href={action.href}
                     target={action.kind === 'email' ? undefined : '_blank'}
                     rel="noreferrer noopener"
-                    className="flex flex-1 items-center gap-4"
+                    className="group flex flex-1 items-center gap-4"
                   >
                     <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-accent-violet/40 to-accent-cyan/30 text-white">
                       <Icon size={18} />
                     </span>
                     <div className="min-w-0">
-                      <p className="text-xs uppercase tracking-[0.2em] text-white/45">
+                      <p className="text-xs uppercase tracking-[0.2em] text-ink-500 dark:text-white/45">
                         {action.kind}
                       </p>
-                      <p className="mt-1 truncate font-display text-base text-white/90">
+                      <p className="mt-1 truncate font-display text-base text-ink-950 dark:text-white/90">
                         {action.label}
                       </p>
                     </div>
                     <ArrowUpRight
-                      className="ml-auto text-white/40 transition group-hover:text-white"
+                      className="ml-auto text-ink-400 transition group-hover:text-ink-950 dark:text-white/40 dark:group-hover:text-white"
                       size={16}
                     />
                   </a>
@@ -90,7 +90,7 @@ export function Contact() {
         </div>
 
         <Reveal delay={0.2}>
-          <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-3 text-sm text-white/50">
+          <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-3 text-sm text-ink-500 dark:text-white/50">
             <span className="inline-flex items-center gap-2">
               <MapPin size={14} /> {profile.location} · {profile.availability}
             </span>
