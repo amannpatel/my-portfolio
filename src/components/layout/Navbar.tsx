@@ -1,14 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, Moon, Sun, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { navigation, profile } from '@/data/portfolio';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
-import { useTheme } from '@/hooks/useTheme';
 import { cn } from '@/utils/cn';
 
 export function Navbar() {
   const { scrolled } = useScrollProgress(24);
-  const { theme, toggle } = useTheme();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>('#about');
 
@@ -98,26 +96,6 @@ export function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={toggle}
-              aria-label="Toggle theme"
-              className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-white/80 transition-colors hover:bg-white/[0.08] hover:text-white"
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.span
-                  key={theme}
-                  initial={{ y: -8, opacity: 0, rotate: -30 }}
-                  animate={{ y: 0, opacity: 1, rotate: 0 }}
-                  exit={{ y: 8, opacity: 0, rotate: 30 }}
-                  transition={{ duration: 0.25 }}
-                  className="grid place-items-center"
-                >
-                  {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-                </motion.span>
-              </AnimatePresence>
-            </button>
-
             <a
               href="#contact"
               className="hidden rounded-full bg-white px-4 py-2 text-sm font-medium text-ink-950 shadow-glow transition-shadow hover:shadow-glow-cyan md:inline-flex"

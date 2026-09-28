@@ -23,8 +23,7 @@ export function AuroraBackground({ className }: Props) {
       <div className="absolute -bottom-40 -right-40 h-[560px] w-[560px] rounded-full bg-accent-cyan/20 blur-[130px] animate-aurora-2" />
       <div className="absolute top-1/3 left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-accent-rose/15 blur-[120px] animate-aurora-1" />
 
-      <div className="absolute inset-0 bg-grid bg-grid-dark opacity-[0.35] mask-radial-fade dark:opacity-[0.35]" />
-      <div className="absolute inset-0 hidden bg-grid bg-grid-light opacity-[0.6] mask-radial-fade light:block" />
+      <div className="absolute inset-0 bg-grid bg-grid-dark opacity-[0.35] mask-radial-fade" />
 
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[rgb(var(--bg))]" />
     </div>
