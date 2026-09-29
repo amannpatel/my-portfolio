@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Update the sitemap URL to match your live domain
-Sitemap: https://amanpatel.dev/sitemap.xml
+Sitemap: https://amanpatell.vercel.app/sitemap.xml

@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://amanpatel.dev/</loc>
+    <loc>https://amanpatell.vercel.app/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://amanpatel.dev/pp/5.png</image:loc>
+      <image:loc>https://amanpatell.vercel.app/pp/5.png</image:loc>
       <image:title>Aman Patel — creator portrait</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://amanpatel.dev/pp/2.png</image:loc>
+      <image:loc>https://amanpatell.vercel.app/pp/2.png</image:loc>
       <image:title>Aman Patel — portrait</image:title>
     </image:image>
   </url>
