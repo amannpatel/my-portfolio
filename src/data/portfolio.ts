@@ -288,6 +288,7 @@ export type Project = {
   tech: string[];
   links?: { label: string; href: string }[];
   accent: 'violet' | 'cyan' | 'amber';
+  art: 'ticket' | 'ai';
 };
 
 export const projects: Project[] = [
@@ -305,6 +306,7 @@ export const projects: Project[] = [
     ],
     tech: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Kafka', 'Docker', 'Kubernetes'],
     accent: 'violet',
+    art: 'ticket',
   },
   {
     title: 'StrideCal',
@@ -319,6 +321,7 @@ export const projects: Project[] = [
     ],
     tech: ['Java', 'Spring Boot', 'Spring Security', 'OAuth2', 'React', 'SQL'],
     accent: 'cyan',
+    art: 'ai',
   },
 ];
 

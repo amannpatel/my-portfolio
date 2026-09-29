@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowUpRight, Boxes, ExternalLink, Github } from 'lucide-react';
+import { ProjectArt } from '@/components/ui/ProjectArt';
 import { Reveal } from '@/components/ui/Reveal';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { projects, type Project } from '@/data/portfolio';
@@ -67,7 +68,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {/* Visual side — always sits on a coloured gradient, so text stays white in both themes */}
         <div
           className={cn(
-            'relative h-56 min-h-full md:h-auto md:col-span-5',
+            'relative h-72 min-h-full sm:h-80 md:h-auto md:col-span-5',
             reverse ? 'md:order-2' : ''
           )}
         >
@@ -92,14 +93,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             className="absolute right-0 bottom-0 h-52 w-52 rounded-full bg-white/10 blur-3xl"
           />
 
-          <div className="absolute inset-0 flex items-end p-6 md:p-8">
-            <p className="font-display text-4xl font-semibold leading-[0.9] tracking-tight text-white md:text-5xl">
-              {project.title.split(' ').slice(0, 3).join(' ')}
-              <span className="block text-white/50">
-                {project.title.split(' ').slice(3).join(' ')}
-              </span>
-            </p>
-          </div>
+          {/* Themed illustration */}
+          <ProjectArt variant={project.art} />
 
           <div
             aria-hidden
