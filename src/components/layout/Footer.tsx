@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 import { profile } from '@/data/portfolio';
 
 export function Footer() {
@@ -15,7 +15,7 @@ export function Footer() {
               {profile.name}
             </p>
             <p className="text-xs text-ink-500 dark:text-white/50">
-              {profile.role} · {profile.location}
+              Engineer · Creator · Marketer · {profile.location}
             </p>
           </div>
         </div>
@@ -27,6 +27,15 @@ export function Footer() {
             className="grid h-10 w-10 place-items-center rounded-full border border-ink-900/10 bg-ink-900/[0.03] text-ink-700 transition hover:bg-ink-900/[0.06] hover:text-ink-950 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70 dark:hover:bg-white/[0.08] dark:hover:text-white"
           >
             <Mail size={16} />
+          </a>
+          <a
+            href={profile.socials.instagram}
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Instagram"
+            className="grid h-10 w-10 place-items-center rounded-full border border-ink-900/10 bg-ink-900/[0.03] text-ink-700 transition hover:bg-ink-900/[0.06] hover:text-ink-950 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70 dark:hover:bg-white/[0.08] dark:hover:text-white"
+          >
+            <Instagram size={16} />
           </a>
           <a
             href={profile.socials.github}
@@ -49,7 +58,7 @@ export function Footer() {
         </div>
 
         <p className="text-xs text-ink-500 dark:text-white/40">
-          © {year} {profile.name}. Designed & engineered with care.
+          © {year} {profile.name}. Made with obsession & espresso.
         </p>
       </div>
     </footer>

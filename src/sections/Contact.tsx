@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { ArrowUpRight, Github, Instagram, Linkedin, Mail, MapPin } from 'lucide-react';
 import { Reveal } from '@/components/ui/Reveal';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { contact, profile } from '@/data/portfolio';
@@ -8,6 +8,7 @@ const iconMap = {
   email: Mail,
   linkedin: Linkedin,
   github: Github,
+  instagram: Instagram,
 };
 
 export function Contact() {
@@ -55,7 +56,7 @@ export function Contact() {
           </Reveal>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-4 md:grid-cols-3 md:gap-5">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-5">
           {contact.actions.map((action, i) => {
             const Icon = iconMap[action.kind];
             return (

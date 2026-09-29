@@ -1,4 +1,5 @@
 import { Award } from 'lucide-react';
+import { FloatingStickers } from '@/components/effects/FloatingStickers';
 import { Reveal } from '@/components/ui/Reveal';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { highlights } from '@/data/portfolio';
@@ -19,6 +20,13 @@ export function Highlights() {
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-16 mx-auto h-72 max-w-4xl bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.12),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.15),transparent_70%)]"
+      />
+      <FloatingStickers
+        stickers={[
+          { variant: 'bolt', top: '6%', right: '8%', size: 44, rotate: -12, color: '#7c5cff' },
+          { variant: 'target', bottom: '12%', left: '5%', size: 58, rotate: 6, color: '#22d3ee' },
+          { variant: 'play', top: '40%', left: '48%', size: 32, rotate: 18, color: '#f472b6' },
+        ]}
       />
       <div className="container relative">
         <div className="mb-14 flex flex-col items-start justify-between gap-6 md:mb-16 md:flex-row md:items-end">

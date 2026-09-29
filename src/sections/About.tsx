@@ -1,12 +1,38 @@
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
+import { useRef } from 'react';
+import { FloatingStickers } from '@/components/effects/FloatingStickers';
 import { Reveal } from '@/components/ui/Reveal';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { about } from '@/data/portfolio';
 
 export function About() {
+  const reduce = useReducedMotion();
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+  const rightY = useTransform(scrollYProgress, [0, 1], ['4%', '-4%']);
+  const stickerY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
+
   return (
-    <section id="about" className="relative py-28 md:py-36">
-      <div className="container">
+    <section id="about" ref={ref} className="relative py-28 md:py-36">
+      <motion.div
+        style={reduce ? undefined : { y: stickerY }}
+        aria-hidden
+        className="absolute inset-0"
+      >
+        <FloatingStickers
+          stickers={[
+            { variant: 'ring', top: '8%', right: '6%', size: 84, rotate: 0, color: '#7c5cff' },
+            { variant: 'spark', bottom: '10%', left: '3%', size: 32, rotate: 14, color: '#22d3ee' },
+            { variant: 'arrow', top: '30%', left: '46%', size: 28, rotate: -8, color: '#f5b544' },
+          ]}
+        />
+      </motion.div>
+
+      <div className="container relative">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Reveal>
@@ -43,7 +69,10 @@ export function About() {
             </Reveal>
           </div>
 
-          <div className="lg:col-span-7">
+          <motion.div
+            style={reduce ? undefined : { y: rightY }}
+            className="lg:col-span-7"
+          >
             <Reveal delay={0.1}>
               <div className="grid grid-cols-2 gap-4 md:gap-5">
                 {about.stats.map((s) => (
@@ -73,16 +102,15 @@ export function About() {
                       Philosophy
                     </p>
                     <p className="mt-2 text-ink-600 dark:text-white/60">
-                      Boring backends are a compliment. I aim for systems that are
-                      predictable in production, easy to reason about in review, and
-                      calm at 3 AM — because the interesting problems live inside the
-                      details.
+                      Boring backends are a compliment. Loud content is optional but
+                      helpful. I aim for systems — code, content, campaigns — that
+                      compound quietly while I sleep, and are still calm at 3 AM.
                     </p>
                   </div>
                 </div>
               </SpotlightCard>
             </Reveal>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

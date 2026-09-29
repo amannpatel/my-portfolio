@@ -11,6 +11,11 @@ import {
   ShieldCheck,
   Boxes,
   MessageSquare,
+  Target,
+  Film,
+  Instagram,
+  Rocket,
+  LineChart,
 } from 'lucide-react';
 
 type IconType = ComponentType<SVGProps<SVGSVGElement>>;
@@ -18,49 +23,144 @@ type IconType = ComponentType<SVGProps<SVGSVGElement>>;
 export const profile = {
   name: 'Aman Patel',
   firstName: 'Aman',
-  role: 'Software Engineer',
-  headline: 'Backend engineer crafting resilient, high-performance systems.',
+  role: 'Software Engineer · Content Creator · Digital Marketer',
+  roles: ['Software Engineer', 'Content Creator', 'Digital Marketer'],
+  headline: 'Engineer by day, creator by night, marketer in between.',
   positioning:
-    'I design and build distributed backend systems with Java, Spring Boot, and modern cloud infrastructure — turning complex, high-concurrency problems into products that stay fast, reliable, and observable in production.',
+    'I build distributed backend systems for a living — and outside of the IDE, I create content, grow personal brands, and run paid ad campaigns. Same brain, three modes: shipping systems, telling stories, and turning attention into outcomes.',
   location: 'Guwahati, India',
-  availability: 'Open to backend & platform roles',
+  availability: 'Open to work, collabs & creator briefs',
   email: 'aman17626@gmail.com',
   phone: '+91 7002235778',
   resumeUrl: '/resume/Aman-Patel-Resume.pdf',
   socials: {
     github: 'https://github.com/amannpatel',
     linkedin: 'https://linkedin.com/in/amanpatell',
+    instagram: 'https://www.instagram.com/amann.kabir',
   },
+  instagramHandle: '@amann.kabir',
 };
 
 export const navigation = [
   { label: 'About', href: '#about' },
+  { label: 'What I do', href: '#services' },
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Highlights', href: '#highlights' },
+  { label: 'Creator', href: '#creator' },
   { label: 'Contact', href: '#contact' },
 ];
 
 export const about = {
   eyebrow: 'About',
-  title: 'Backend-first, product-minded.',
+  title: 'Backend by trade, brand by instinct.',
   paragraphs: [
-    'I’m Aman — a software engineer who feels most at home in the layers most users never see. I build APIs, data models, and background workflows that quietly hold a product together, and I obsess over the details that make them fast, safe, and easy to reason about.',
-    'My day-to-day sits in Java and Spring Boot, wired into SQL, Redis, and Kafka, with a healthy respect for observability, indexes, and query plans. I care about clean domain boundaries, thoughtful error handling, and code that a future teammate can read on their first day.',
-    'Outside of shipping features, I mentor developers at XT Academy on problem solving and system design, and I use side projects like a distributed ticketing platform to keep sharpening the fundamentals.',
+    'I’m Aman — a software engineer by profession and a creator by obsession. By day I build distributed backend systems in Java and Spring Boot. By night I make content about engineering, personal brand, and building an online presence — and I run paid ad campaigns for creators and small businesses in the process.',
+    'The through-line is the same: I like systems. Systems for scaling APIs, systems for growing an audience, systems for turning attention into outcomes. Whether it’s an SQL query plan or a hook on a reel, the discipline of thinking in leverage never changes.',
+    'Outside of shipping features and posting online, I mentor at XT Academy and use side projects like a distributed ticketing platform to keep the fundamentals sharp.',
   ],
   focus: [
     'Distributed backend systems',
-    'API design & performance tuning',
-    'Data modelling & indexing',
-    'Reliability & security remediation',
+    'Short-form content & personal brand',
+    'Meta ads & performance marketing',
+    'Mentorship & system design',
   ],
   stats: [
+    { value: '3', label: 'Modes I operate in — engineer, creator, marketer' },
     { value: '1.5+', label: 'Years shipping production backends' },
-    { value: '10+', label: 'Dashboards & modules delivered' },
     { value: '2', label: 'Enterprise clients supported' },
-    { value: '4+', label: 'Certifications & recognitions' },
+    { value: '∞', label: 'Reels, carousels & campaigns in flight' },
+  ],
+};
+
+export type Service = {
+  title: string;
+  tagline: string;
+  description: string;
+  icon: IconType;
+  accent: 'violet' | 'cyan' | 'amber' | 'rose';
+  points: string[];
+};
+
+export const services: Service[] = [
+  {
+    title: 'Backend Engineering',
+    tagline: 'Systems that stay honest under load',
+    description:
+      'Distributed APIs, data models, and background workflows in Java + Spring Boot — designed to be fast, observable, and boring in production.',
+    icon: Server,
+    accent: 'violet',
+    points: ['Microservices & APIs', 'Query & index tuning', 'Kafka, Redis, PostgreSQL'],
+  },
+  {
+    title: 'Content Creation',
+    tagline: 'Scroll-stopping stories about building',
+    description:
+      'Short-form reels, carousels, and long-form threads that turn engineering, brand, and mindset into content that compounds.',
+    icon: Film,
+    accent: 'rose',
+    points: ['Reels & shorts', 'Carousels & threads', 'Creator strategy'],
+  },
+  {
+    title: 'Paid Ads & Growth',
+    tagline: 'Turning attention into outcomes',
+    description:
+      'Meta ad campaigns for creators, coaches, and small businesses — campaign structure, creative testing, and iterating toward the winners.',
+    icon: Target,
+    accent: 'amber',
+    points: ['Meta Ads Manager', 'Creative testing', 'Full-funnel campaigns'],
+  },
+  {
+    title: 'Mentorship',
+    tagline: 'Coaching devs through the first mile',
+    description:
+      'Mentoring students and working professionals at XT Academy on problem solving, system design, and career direction.',
+    icon: MessageSquare,
+    accent: 'cyan',
+    points: ['Problem solving', 'System design', 'Career direction'],
+  },
+];
+
+export const creator = {
+  eyebrow: 'On the internet',
+  title: 'I build in code and in public.',
+  subtitle:
+    'A creator account where I share the engineer’s side of building online — from system design breakdowns to what it takes to grow a personal brand as a developer.',
+  handle: profile.instagramHandle,
+  handleUrl: profile.socials.instagram,
+  pillars: [
+    {
+      title: 'Engineering',
+      description:
+        'System design breakdowns, debugging stories, and what backends actually look like in production.',
+      icon: Code2,
+    },
+    {
+      title: 'Personal brand',
+      description:
+        'How devs can turn their work, taste, and story into a compounding online presence.',
+      icon: Sparkles,
+    },
+    {
+      title: 'Growth & ads',
+      description:
+        'What I learn running Meta ad campaigns and building creator systems that scale.',
+      icon: LineChart,
+    },
+  ],
+  toolkit: [
+    'Instagram Reels',
+    'CapCut',
+    'Adobe Premiere',
+    'Figma',
+    'Notion',
+    'Meta Ads Manager',
+    'Google Ads',
+    'Analytics',
+  ],
+  ctas: [
+    { label: 'Follow on Instagram', href: profile.socials.instagram, kind: 'primary' as const },
+    { label: 'DM for collabs & briefs', href: `mailto:${profile.email}?subject=Collab%20/%20Creator%20brief`, kind: 'secondary' as const },
   ],
 };
 
@@ -245,6 +345,20 @@ export const highlights: Highlight[] = [
     tag: 'Mentorship',
   },
   {
+    title: 'Building in public on Instagram',
+    description:
+      'Sharing engineering, personal brand, and growth as @amann.kabir — reels, carousels, and threads about the craft of building online.',
+    icon: Instagram,
+    tag: 'Creator',
+  },
+  {
+    title: 'Meta Ads for creators & SMBs',
+    description:
+      'Running paid ad campaigns end-to-end — from creative testing to full-funnel structure — for creators, coaches, and small businesses.',
+    icon: Rocket,
+    tag: 'Growth',
+  },
+  {
     title: 'Geek-O-Lympics 2.0 Finalist',
     description:
       'Advanced to the final round of GeeksforGeeks’ Geek-O-Lympics 2.0 competitive programming contest.',
@@ -283,11 +397,12 @@ export const highlights: Highlight[] = [
 
 export const contact = {
   eyebrow: 'Contact',
-  title: 'Let’s build something worth shipping.',
+  title: 'Let’s build, ship, or make something.',
   subtitle:
-    'I’m open to backend and platform roles, interesting collaborations, and thoughtful conversations about systems, performance, and product engineering.',
+    'Open to backend roles, creator collabs, ad campaign briefs, and thoughtful conversations about building — in code and in public.',
   actions: [
     { label: 'aman17626@gmail.com', href: 'mailto:aman17626@gmail.com', kind: 'email' as const },
+    { label: profile.instagramHandle, href: profile.socials.instagram, kind: 'instagram' as const },
     { label: 'LinkedIn', href: profile.socials.linkedin, kind: 'linkedin' as const },
     { label: 'GitHub', href: profile.socials.github, kind: 'github' as const },
   ],
