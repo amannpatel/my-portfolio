@@ -41,6 +41,14 @@ export const profile = {
   instagramHandle: '@amann.kabir',
 };
 
+export const photos = {
+  hero: '/pp/2.png',
+  aboutPrimary: '/pp/3.png',
+  aboutSecondary: '/pp/4.png',
+  instagramBanner: '/pp/5.png',
+  highlight: '/pp/1.jpg',
+};
+
 export const navigation = [
   { label: 'About', href: '#about' },
   { label: 'What I do', href: '#services' },

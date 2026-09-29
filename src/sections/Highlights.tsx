@@ -1,8 +1,9 @@
 import { Award } from 'lucide-react';
 import { FloatingStickers } from '@/components/effects/FloatingStickers';
+import { PhotoPolaroid } from '@/components/ui/PhotoPolaroid';
 import { Reveal } from '@/components/ui/Reveal';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
-import { highlights } from '@/data/portfolio';
+import { highlights, photos } from '@/data/portfolio';
 import { cn } from '@/utils/cn';
 
 const spanMap = [
@@ -60,11 +61,25 @@ export function Highlights() {
               <Reveal key={h.title} delay={i * 0.04} className={cn(span, 'flex')}>
                 <SpotlightCard
                   className={cn(
-                    'flex w-full flex-col justify-between p-6 md:p-7',
+                    'relative flex w-full flex-col justify-between overflow-hidden p-6 md:p-7',
                     featured &&
                       'bg-gradient-to-br from-accent-violet/10 via-transparent to-accent-cyan/10'
                   )}
                 >
+                  {featured && (
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute -bottom-6 -right-6 hidden md:block"
+                    >
+                      <PhotoPolaroid
+                        src={photos.highlight}
+                        caption="Studio"
+                        rotate={10}
+                        size="sm"
+                        delay={0.15}
+                      />
+                    </div>
+                  )}
                   <div className="flex items-start justify-between gap-4">
                     <div
                       className={cn(

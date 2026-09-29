@@ -18,8 +18,9 @@ import { FloatingStickers } from '@/components/effects/FloatingStickers';
 import { SparkleField } from '@/components/effects/SparkleField';
 import { AnimatedHeading } from '@/components/ui/AnimatedHeading';
 import { MagneticButton } from '@/components/ui/MagneticButton';
+import { PhotoPolaroid } from '@/components/ui/PhotoPolaroid';
 import { RotatingWord } from '@/components/ui/RotatingWord';
-import { profile } from '@/data/portfolio';
+import { photos, profile } from '@/data/portfolio';
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -74,6 +75,23 @@ export function Hero() {
         style={reduce ? undefined : { y: heroY, opacity: heroOpacity }}
         className="container relative"
       >
+        {/* Floating polaroid — decorative signature photo pinned to the corner */}
+        <motion.div
+          style={reduce ? undefined : { y: stickerY }}
+          className="pointer-events-none absolute right-4 top-4 z-10 hidden lg:block xl:right-10 xl:top-8"
+        >
+          <div className="pointer-events-auto">
+            <PhotoPolaroid
+              src={photos.hero}
+              caption={profile.instagramHandle}
+              rotate={6}
+              size="md"
+              delay={0.4}
+              objectPosition="50% 25%"
+            />
+          </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}

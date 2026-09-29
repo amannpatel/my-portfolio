@@ -5,7 +5,7 @@ import { IconMarquee } from '@/components/ui/IconMarquee';
 import { Reveal } from '@/components/ui/Reveal';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { TiltCard } from '@/components/ui/TiltCard';
-import { creator } from '@/data/portfolio';
+import { creator, photos } from '@/data/portfolio';
 import { cn } from '@/utils/cn';
 
 export function Creator() {
@@ -117,56 +117,63 @@ export function Creator() {
                   max={7}
                 >
                   <SpotlightCard className="relative overflow-hidden p-0">
-                    {/* Gradient stage */}
-                    <div className="relative h-72 overflow-hidden md:h-80">
-                      <div className="absolute inset-0 bg-[linear-gradient(135deg,#f472b6,#7c5cff_45%,#22d3ee)]" />
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.35),transparent_50%)]" />
-                      <div className="absolute inset-0 bg-grid bg-grid-dark opacity-25 mask-radial-fade" />
+                    {/* Full-bleed photo stage */}
+                    <div className="relative h-[420px] overflow-hidden md:h-[480px]">
+                      <motion.img
+                        src={photos.instagramBanner}
+                        alt="Aman — creator portrait"
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-cover"
+                        style={{ objectPosition: '50% 35%' }}
+                        initial={{ scale: 1.08 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true, margin: '-15%' }}
+                        transition={{ duration: 1.6, ease: [0.2, 0.8, 0.2, 1] }}
+                      />
 
-                      <motion.div
-                        aria-hidden
-                        animate={
-                          reduce ? undefined : { x: [0, 24, 0], y: [0, -18, 0] }
-                        }
-                        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
-                        className="absolute -left-16 top-10 h-56 w-56 rounded-full bg-white/25 blur-3xl"
-                      />
-                      <motion.div
-                        aria-hidden
-                        animate={
-                          reduce ? undefined : { x: [0, -18, 0], y: [0, 22, 0] }
-                        }
-                        transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
-                        className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-white/20 blur-3xl"
-                      />
+                      {/* Color-graded gradient overlays */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70" />
+                      <div className="absolute inset-0 bg-gradient-to-tr from-accent-violet/35 via-transparent to-accent-rose/25 mix-blend-overlay" />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.25),transparent_55%)]" />
 
                       {/* Floating sticker icons */}
                       <FloatingBadge
                         icon={<Play size={16} />}
-                        style={{ top: '18%', left: '10%' }}
+                        style={{ top: '10%', left: '8%' }}
                         rotate={-12}
                       />
                       <FloatingBadge
                         icon={<Camera size={16} />}
-                        style={{ top: '22%', right: '14%' }}
+                        style={{ top: '14%', right: '10%' }}
                         rotate={10}
                       />
                       <FloatingBadge
                         icon={<Sparkles size={16} />}
-                        style={{ bottom: '28%', left: '18%' }}
+                        style={{ top: '48%', left: '6%' }}
                         rotate={6}
                       />
 
-                      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white">
-                        <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] backdrop-blur">
+                      {/* Top handle chip */}
+                      <div className="absolute inset-x-0 top-0 flex items-start justify-between p-5 md:p-6">
+                        <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/25 px-3 py-1.5 text-[11px] uppercase tracking-[0.24em] text-white backdrop-blur">
                           <Instagram size={12} />
                           Creator
                         </span>
-                        <p className="mt-4 font-display text-4xl font-semibold leading-tight md:text-5xl">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/25 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur">
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                          Live
+                        </span>
+                      </div>
+
+                      {/* Bottom overlay content */}
+                      <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
+                        <p className="font-display text-4xl font-semibold leading-tight md:text-5xl">
                           {creator.handle}
                         </p>
-                        <p className="mt-2 max-w-xs text-sm text-white/80">
-                          Building in code + in public.
+                        <p className="mt-2 max-w-sm text-sm text-white/85">
+                          Building in code + in public — reels, carousels, and
+                          engineering stories.
                         </p>
                       </div>
                     </div>

@@ -2,9 +2,10 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion
 import { Sparkles } from 'lucide-react';
 import { useRef } from 'react';
 import { FloatingStickers } from '@/components/effects/FloatingStickers';
+import { PhotoPolaroid } from '@/components/ui/PhotoPolaroid';
 import { Reveal } from '@/components/ui/Reveal';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
-import { about } from '@/data/portfolio';
+import { about, photos } from '@/data/portfolio';
 
 export function About() {
   const reduce = useReducedMotion();
@@ -73,6 +74,30 @@ export function About() {
             style={reduce ? undefined : { y: rightY }}
             className="lg:col-span-7"
           >
+            {/* Photo stack — two overlapping polaroids */}
+            <Reveal delay={0.05}>
+              <div className="relative mb-6 flex items-start justify-center gap-3 md:mb-8 md:gap-6">
+                <div className="translate-y-4">
+                  <PhotoPolaroid
+                    src={photos.aboutPrimary}
+                    caption="Off duty"
+                    rotate={-8}
+                    size="md"
+                    delay={0.1}
+                  />
+                </div>
+                <div className="-translate-y-2">
+                  <PhotoPolaroid
+                    src={photos.aboutSecondary}
+                    caption="Behind the reel"
+                    rotate={7}
+                    size="md"
+                    delay={0.25}
+                  />
+                </div>
+              </div>
+            </Reveal>
+
             <Reveal delay={0.1}>
               <div className="grid grid-cols-2 gap-4 md:gap-5">
                 {about.stats.map((s) => (
