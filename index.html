@@ -28,15 +28,10 @@
       (function () {
         try {
           var stored = localStorage.getItem('ap-portfolio-theme');
-          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          var isDark = stored ? stored === 'dark' : true; // default to dark
-          if (stored === null && !prefersDark) {
-            // still default to dark to preserve the art-directed dark experience
-            isDark = true;
-          }
+          var isDark = stored ? stored === 'dark' : false; // default to light
           document.documentElement.classList.toggle('dark', isDark);
         } catch (e) {
-          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('dark');
         }
       })();
     </script>
