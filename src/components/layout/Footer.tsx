@@ -23,7 +23,7 @@ export function Footer() {
         <div className="flex items-center gap-2">
           <a
             href={`mailto:${profile.email}`}
-            aria-label="Email"
+            aria-label="Email Aman Patel"
             className="grid h-10 w-10 place-items-center rounded-full border border-ink-900/10 bg-ink-900/[0.03] text-ink-700 transition hover:bg-ink-900/[0.06] hover:text-ink-950 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70 dark:hover:bg-white/[0.08] dark:hover:text-white"
           >
             <Mail size={16} />
@@ -31,8 +31,8 @@ export function Footer() {
           <a
             href={profile.socials.instagram}
             target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Instagram"
+            rel="me noreferrer noopener"
+            aria-label="Aman Patel on Instagram (@amann.kabir)"
             className="grid h-10 w-10 place-items-center rounded-full border border-ink-900/10 bg-ink-900/[0.03] text-ink-700 transition hover:bg-ink-900/[0.06] hover:text-ink-950 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70 dark:hover:bg-white/[0.08] dark:hover:text-white"
           >
             <Instagram size={16} />
@@ -40,8 +40,8 @@ export function Footer() {
           <a
             href={profile.socials.github}
             target="_blank"
-            rel="noreferrer noopener"
-            aria-label="GitHub"
+            rel="me noreferrer noopener"
+            aria-label="Aman Patel on GitHub"
             className="grid h-10 w-10 place-items-center rounded-full border border-ink-900/10 bg-ink-900/[0.03] text-ink-700 transition hover:bg-ink-900/[0.06] hover:text-ink-950 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70 dark:hover:bg-white/[0.08] dark:hover:text-white"
           >
             <Github size={16} />
@@ -49,8 +49,8 @@ export function Footer() {
           <a
             href={profile.socials.linkedin}
             target="_blank"
-            rel="noreferrer noopener"
-            aria-label="LinkedIn"
+            rel="me noreferrer noopener"
+            aria-label="Aman Patel on LinkedIn"
             className="grid h-10 w-10 place-items-center rounded-full border border-ink-900/10 bg-ink-900/[0.03] text-ink-700 transition hover:bg-ink-900/[0.06] hover:text-ink-950 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70 dark:hover:bg-white/[0.08] dark:hover:text-white"
           >
             <Linkedin size={16} />
